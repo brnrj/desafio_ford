@@ -55,17 +55,17 @@ function rotaCentroOesteNordeste(partida, destino) {
   if(['Campo Grande', 'Cuiabá'].includes(partida)){
     passagemCentroOeste = 1;
   }
-  if(['Aracaju', 'Maceió', 'Teresina', 'Recife'].includes(partida)) {
+  if(['Aracaju', 'Maceió', 'Teresina', 'Recife'].includes(destino)) {
     passagemNordeste = 1;
   }
-  else if(['Fortaleza', 'São Luís', 'João Pessoa'].includes(partida)){
+  if(['Fortaleza', 'São Luís', 'João Pessoa'].includes(destino)){
     passagemNordeste = 2;
   } 
-  else if(partida === 'Natal') {
+  if(destino === 'Natal') {
     passagemNordeste = 3;
-  } else {
-    passagemNordeste = 0
   }
   console.log(`Para irmos de ${partida} até ${destino} passaremos pelo menos por ${passagemCentroOeste + passagemNordeste}`);
   return;
 }
+
+rotaCentroOesteNordeste('Cuiabá', 'Natal');
